@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temperature Converter</title>
+        <link rel="stylesheet" href="temp.css">
+        <script>
+            function eval()
+            {
+                var val = document.getElementById("input").value;
+                var menu = document.getElementById("menu").value;
+                var ans = document.getElementById("ans");
+                var submit = document.getElementById("submit");
+                if(menu == "Celsius")
+                {
+                    var a = (parseFloat(val)-32)*(5/9);
+                    ans.innerHTML = a+" °C";
+                }
+                else if(menu == "Fahrenheit")
+                {
+                    var b = (parseFloat(val)*(9/5))+32;
+                    ans.innerHTML = b+" °F";
+                }
+                else
+                {
+                    alert("Choose an option!!!");
+                }
+            }   
+            
+        </script>       
+    </head>
+    <body>
+        <div class="container">
+            <h1>Temperature Converter</h1>
+            <div class="converter-row">
+                <div class="col">
+                    <label>Enter a value in °F/°C: </label>
+                    <input type="number" id="input"><br><br><br>
+                </div>
+                <div class="col">
+                    <label>Choose a unit: </label>
+                    <select name="menu" id="menu">
+                    <option>Select your choice</option>
+                    <option value="Celsius" id="celsius">Celsius</option>
+                    <option value="Fahrenheit" id="fahrenheit">Fahrenheit</option>
+                   </select><br><br><br>
+                </div>
+            </div>
+            <button class="button" type="submit" value="submit" id="submit" onclick="eval(this.body)">Convert</button><br><br><br>
+            <div class="col">
+                <label>Answer: </label>
+                <textarea name="answer" id="ans"></textarea>
+            </div>
+        </div>
+    </body>
+</html>
